@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\New_;
 use TCG\Voyager\Models\Category;
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $categories = Category::orderBy('created_at', 'desc')->paginate(5);
         $allcategories = Category::where('order', '=', '1')->orderBy('created_at', 'desc')->get();
         $news = ModelsPost::orderBy('created_at', 'desc')->paginate(3);
-        return view('home', compact('categories', 'allcategories', 'news'));
+        $products = Product::orderBy('created_at', 'desc')->paginate(15);
+        return view('home', compact('categories', 'allcategories', 'news','products'));
     }
 }

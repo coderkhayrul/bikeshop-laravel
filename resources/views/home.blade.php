@@ -96,49 +96,34 @@
             <div class="uk-grid-width-small-1-3 uk-grid-width-medium-1-4 uk-grid-width-large-1-3"
                 data-uk-grid="{gutter:20}">
 
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="#"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
+            <!-- Single Product Start -->
+            @foreach ($products as $product )
+            <?php $images = json_decode($product->image, true); ?>
+            <?php $images[0]; ?>
+            <div>
+                <div class="uk-overlay uk-overlay-hover">
+                    <img src="{{ Voyager::image($images[0]) }}" alt="Image">
+                    <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
+                    <a class="uk-position-cover" href="{{ url('products') }}/{{ $product->slug }}"></a>
                 </div>
+                <div class="uk-panel">
 
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
+                    <h5 class="uk-panel-title">{{ $product->productname }}</h5>
+                    <p>
+                        <span class="rating">
+                            <i class="uk-icon-star"></i>
+                            <i class="uk-icon-star"></i>
+                            <i class="uk-icon-star"></i>
+                            <i class="uk-icon-star"></i>
+                            <i class="uk-icon-star"></i>
+                        </span>
+                        <span class="uk-float-right">{{ Str::substr($product->created_at, 0, 4) }}</span>
+                    </p>
                 </div>
+            </div>
+            @endforeach
+            <!-- Single Product End -->
+
                 <div>
                     <div class="uk-overlay uk-overlay-hover">
                         <img src="assets/img/placeholder.png" alt="Image">
@@ -160,258 +145,12 @@
                         </p>
                     </div>
                 </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
 
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-overlay uk-overlay-hover">
-                        <img src="assets/img/placeholder.png" alt="Image">
-                        <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                        <a class="uk-position-cover" href="media.html"></a>
-                    </div>
-                    <div class="uk-panel">
-
-                        <h5 class="uk-panel-title">Media title goes here</h5>
-                        <p>
-                            <span class="rating">
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                                <i class="uk-icon-star"></i>
-                            </span>
-                            <span class="uk-float-right">2016</span>
-                        </p>
-                    </div>
-                </div>
             </div>
             <div class="uk-margin-large-top uk-margin-bottom">
                 <ul class="uk-pagination">
