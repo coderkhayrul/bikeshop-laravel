@@ -1,7 +1,15 @@
 <?php
 
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\MessageController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +34,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::resource('/news', NewsController::class);
+Route::resource('/category', CategoryController::class);
+Route::resource('/products', ProductsController::class);
+Route::resource('/review', ReviewController::class);
+Route::resource('/wishlist', WishlistController::class);
+Route::resource('/message', MessageController::class);

@@ -104,7 +104,7 @@
                 <div class="uk-overlay uk-overlay-hover">
                     <img src="{{ Voyager::image($images[0]) }}" alt="Image">
                     <div class="uk-overlay-panel uk-overlay-fade uk-overlay-background  uk-overlay-icon"></div>
-                    <a class="uk-position-cover" href="{{ url('products') }}/{{ $product->slug }}"></a>
+                    <a class="uk-position-cover" href="{{ route('products.show', $product->slug) }}"></a>
                 </div>
                 <div class="uk-panel">
 

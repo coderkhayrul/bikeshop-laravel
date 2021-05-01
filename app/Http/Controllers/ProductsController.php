@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -17,7 +19,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a newph resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,12 +42,15 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product =Product::where('slug', '=', $slug)->firstOrFail();
+        $images = json_decode($product->image);
+        return view('product.show', compact('product'));
+
     }
 
     /**
