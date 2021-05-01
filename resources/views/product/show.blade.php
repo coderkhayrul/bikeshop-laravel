@@ -126,37 +126,56 @@
                                         class="uk-text-contrast" href="login.html"> Log in</a> or Sign up to post
                                     reviews quicker.</p>
                             </div>
-                            <form class="uk-form uk-margin-bottom">
+
+                            <form class="uk-form uk-margin-bottom" action="{{  route('review.store') }}" method="POST">
+                                @csrf
+                                <input name="product_id" type="hidden" value=" {{$product->id}} ">
+                                <input name="user_id" type="hidden" value="{{ Auth::user()->id }}">
                                 <div class="uk-form-row">
-                                    <textarea class="uk-width-1-1" cols="30" rows="5"
+                                    <textarea name="review_content" class="uk-width-1-1" cols="30" rows="5"
                                         placeholder="Type your review here..."></textarea>
                                     <p class="uk-form-help-block">The <code>.uk-form-help-block</code> class creates an
                                         associated paragraph.</p>
                                 </div>
                                 <div class="uk-margin">
-
                                     <div class="uk-form-controls">
-                                        <label><input class="uk-radio" name="radio1" type="radio"> <i
-                                                class="uk-icon-star "></i></label>
-                                        <label><input class="uk-radio" name="radio1" type="radio"> <i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i></label>
-                                        <label><input class="uk-radio" name="radio1" type="radio"> <i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i><i
-                                                class="uk-icon-star "></i></label>
-                                        <label><input class="uk-radio" name="radio1" type="radio"> <i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i><i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i></label>
-                                        <label><input class="uk-radio" name="radio1" type="radio"> <i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i><i
-                                                class="uk-icon-star "></i><i class="uk-icon-star "></i><i
-                                                class="uk-icon-star "></i></label>
+                                        <label>
+                                            <input class="uk-radio" name="review_one" type="radio" value="1">
+                                            <i class="uk-icon-star "></i>
+                                        </label>
+                                        <label>
+                                            <input class="uk-radio" name="review_two" type="radio" value="2">
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                        </label>
+                                        <label>
+                                            <input class="uk-radio" name="review_three" type="radio" value="3">
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                        </label>
+                                        <label>
+                                            <input class="uk-radio" name="review_four" type="radio" value="4">
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                        </label>
+                                        <label>
+                                            <input class="uk-radio" name="review_five" type="radio" value="5">
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                            <i class="uk-icon-star "></i>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="uk-form-row">
-                                    <a href=""
-                                        class="uk-button uk-button-large uk-button-success uk-float-right">Post</a>
+                                    <button type="submit" class="uk-button uk-button-large uk-button-success uk-float-right">Review</button>
                                 </div>
                             </form>
+
                         </div>
 
                         <div class="uk-scrollable-box uk-responsive-width ">
